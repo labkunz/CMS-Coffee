@@ -8,6 +8,16 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
 
+  runtimeConfig: {
+    // Private keys (server-side only)
+    contentfulAccessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    // Public keys (exposed to client)
+    public: {
+      contentfulSpaceId: process.env.CONTENTFUL_SPACE_ID,
+      contentfulEnvironment: process.env.CONTENTFUL_ENVIRONMENT || 'master'
+    }
+  },
+
   routeRules: {
     '/': { prerender: true }
   },
