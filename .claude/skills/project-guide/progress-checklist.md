@@ -14,14 +14,14 @@
 
 ### Contentful 後台設定（🧑 手動）
 
-- [ ] 🧑 註冊 Contentful 免費帳號（contentful.com）
-- [ ] 🧑 建立 Space（命名如 `coffee-shop`）
-- [ ] 🧑 建立 Content Model：`menuItem`、`homepage`、`about`（對照 `02-content-model.md`）
-- [ ] 🧑 設定 `category` 欄位的 Validation（Accept only specified values：espresso / drip / tea / dessert）
-- [ ] 🧑 從 Unsplash 下載品項圖片（對照 `09-sample-data.md`）
-- [ ] 🧑 新增假資料：8 個品項 + 首頁設定 + 關於我們（**全部按 Publish**）
-- [ ] 🧑 到 Settings → API keys 建立 API key，記下 Space ID 和 CDA token
-- [ ] 🧑 用瀏覽器直接測試 API（貼 URL 到瀏覽器確認 JSON 回傳正常）
+- [x] ✅ 🧑 註冊 Contentful 免費帳號（contentful.com）
+- [x] ✅ 🧑 建立 Space（命名為 `coffee-shop`）
+- [x] ✅ 🧑 建立 Content Model：`menuItem`、`homePage`、`about`
+- [x] ✅ 🧑 設定 `category` 欄位的 Validation（Accept only specified values：espresso / drip / tea / dessert）+ Appearance 改為 Dropdown
+- [x] ✅ 🧑 從 Unsplash 下載品項圖片（10 張）
+- [x] ✅ 🧑 新增假資料：8 個品項 + 首頁設定 + 關於我們（**全部已 Publish**）
+- [x] ✅ 🧑 到 Settings → API keys 建立 API key，記下 Space ID 和 CDA token
+- [x] ✅ 🧑 用瀏覽器直接測試 API（確認 JSON 回傳 total: 8，資料正常）
 
 ### Nuxt 4 專案建置（🤖 Claude Code）
 
