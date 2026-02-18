@@ -1,3 +1,5 @@
+import type { Document } from '@contentful/rich-text-types'
+
 // Contentful 基礎型別
 
 export interface ContentfulSys {

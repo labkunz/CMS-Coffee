@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import type { About } from '~/types/contentful'
 
 useSeoMeta({
   title: 'Brew & Bean · 關於我們',
@@ -10,7 +11,7 @@ const { fetchContentful, resolveAssetUrl, findAsset } = useContentful()
 
 const { data: aboutResponse, error, pending } = await useAsyncData(
   'about',
-  () => fetchContentful('about', { limit: '1' })
+  () => fetchContentful<About>('about', { limit: '1' })
 )
 
 const about = computed(() => aboutResponse.value?.items[0] ?? null)
@@ -24,7 +25,7 @@ const coverImageUrl = computed(() => {
 
 const descriptionHtml = computed(() => {
   if (!about.value?.fields?.description) return ''
-  return documentToHtmlString(about.value.fields.description as Parameters<typeof documentToHtmlString>[0])
+  return documentToHtmlString(about.value.fields.description)
 })
 </script>
 
@@ -77,6 +78,7 @@ const descriptionHtml = computed(() => {
       </div>
 
       <!-- Rich Text 描述 -->
+      <!-- eslint-disable vue/no-v-html -->
       <div
         class="prose prose-neutral dark:prose-invert max-w-none mb-10"
         v-html="descriptionHtml"

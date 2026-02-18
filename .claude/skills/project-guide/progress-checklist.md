@@ -27,11 +27,11 @@
 
 - [x] ✅ 🧑 在終端機執行：`npx nuxi@latest init coffee-web`（需要你互動選擇選項）
 - [x] ✅ 🤖 安裝 Nuxt UI v4：`npx nuxi@latest module add ui`
-- [x] 🤖 設定 `nuxt.config.ts`（runtimeConfig、Contentful 環境變數）
-- [x] 🤖 建立 `.env` 檔案，填入 Space ID 和 CDA token
-- [x] 🤖 建立 `app/composables/useContentful.ts`（API 封裝）
-- [x] 🤖 建立 `app/types/contentful.ts`（TypeScript 型別定義）
-- [x] 🤖 寫一個測試頁面確認 API 串接成功
+- [x] ✅ 🤖 設定 `nuxt.config.ts`（runtimeConfig、Contentful 環境變數）
+- [x] ✅ 🤖 建立 `.env` 檔案，填入 Space ID 和 CDA token
+- [x] ✅ 🤖 建立 `app/composables/useContentful.ts`（API 封裝）
+- [x] ✅ 🤖 建立 `app/types/contentful.ts`（TypeScript 型別定義）
+- [x] ✅ 🤖 寫一個測試頁面確認 API 串接成功
 - [x] 🧑 在瀏覽器打開 localhost 確認資料有顯示
 
 **預估時間**：3-4 小時  
@@ -48,11 +48,11 @@
 
 **目標**：首頁完整呈現，包含導覽列和頁尾
 
-- [ ] 🤖 建立 Layout（Navbar + Footer），使用 Nuxt UI 的 NavigationMenu 元件
-- [ ] 🤖 首頁 Hero Banner 區塊：從 `homepage` Content Type 取資料
-- [ ] 🤖 首頁精選品項區塊：篩選 `featured = true` 的品項，用 Nuxt UI Card 元件呈現
-- [ ] 🤖 品項卡片元件（`app/components/MenuCard.vue`）：圖片、名稱、價格、分類標籤
-- [ ] 🤖 處理圖片：用 `resolveAsset` 解析圖片 URL
+- [x] ✅ 🤖 建立 Layout（Navbar + Footer），使用 Nuxt UI 的 NavigationMenu 元件
+- [x] ✅ 🤖 首頁 Hero Banner 區塊：從 `homepage` Content Type 取資料
+- [x] ✅ 🤖 首頁精選品項區塊：篩選 `featured = true` 的品項，用 Nuxt UI Card 元件呈現
+- [x] ✅ 🤖 品項卡片元件（`app/components/MenuCard.vue`）：圖片、名稱、價格、分類標籤
+- [x] ✅ 🤖 處理圖片：用 `resolveAsset` 解析圖片 URL
 - [ ] 🧑 在瀏覽器確認視覺效果，提供調整意見給 Claude Code
 
 **預估時間**：4-5 小時  
@@ -64,13 +64,13 @@
 
 **目標**：核心功能頁面全部完成
 
-- [ ] 🤖 菜單列表頁（`app/pages/menu/index.vue`）：顯示所有品項卡片
-- [ ] 🤖 分類篩選功能：用 Nuxt UI 的 Tabs 或 ButtonGroup 切換分類
-- [ ] 🤖 篩選邏輯：用 computed 前端過濾
-- [ ] 🤖 單品詳情頁（`app/pages/menu/[slug].vue`）：動態路由，展示完整品項資訊
-- [ ] 🤖 404 處理：slug 不存在時用 `createError` 拋出錯誤頁面
-- [ ] 🤖 Loading 狀態：用 `pending` 搭配 Nuxt UI 的 Skeleton 元件
-- [ ] 🤖 Error 狀態：API 失敗時的降級顯示
+- [x] ✅ 🤖 菜單列表頁（`app/pages/menu/index.vue`）：顯示所有品項卡片
+- [x] ✅ 🤖 分類篩選功能：用 Nuxt UI 的 Tabs 或 ButtonGroup 切換分類
+- [x] ✅ 🤖 篩選邏輯：用 computed 前端過濾
+- [x] ✅ 🤖 單品詳情頁（`app/pages/menu/[slug].vue`）：動態路由，展示完整品項資訊
+- [x] ✅ 🤖 404 處理：slug 不存在時用 `createError` 拋出錯誤頁面
+- [x] ✅ 🤖 Loading 狀態：用 `pending` 搭配 Nuxt UI 的 Skeleton 元件
+- [x] ✅ 🤖 Error 狀態：API 失敗時的降級顯示
 - [ ] 🧑 手動測試：切換分類、點進詳情頁、輸入不存在的 slug 確認 404
 
 **預估時間**：5-6 小時  
@@ -84,14 +84,14 @@
 
 ### 關於頁面 + SEO（🤖 Claude Code）
 
-- [ ] 🤖 安裝 `@contentful/rich-text-html-renderer`
-- [ ] 🤖 關於我們頁面（`app/pages/about.vue`）：Rich Text 渲染 + 店面照片
-- [ ] 🤖 SEO 設定：用 `useHead` 或 `useSeoMeta` 設定每頁的 title / description
+- [x] ✅ 🤖 安裝 `@contentful/rich-text-html-renderer`
+- [x] ✅ 🤖 關於我們頁面（`app/pages/about.vue`）：Rich Text 渲染 + 店面照片
+- [x] ✅ 🤖 SEO 設定：用 `useHead` 或 `useSeoMeta` 設定每頁的 title / description
 
 ### 部署（🧑 手動 + 🤖 輔助）
 
-- [ ] 🤖 確認 `.gitignore` 包含 `.env`
-- [ ] 🤖 撰寫基本 `README.md`
+- [x] ✅ 🤖 確認 `.gitignore` 包含 `.env`
+- [x] ✅ 🤖 撰寫基本 `README.md`
 - [ ] 🧑 推 code 到 GitHub
 - [ ] 🧑 到 Vercel 連結 GitHub repo
 - [ ] 🧑 在 Vercel 設定環境變數（CONTENTFUL_SPACE_ID、CONTENTFUL_ACCESS_TOKEN）
