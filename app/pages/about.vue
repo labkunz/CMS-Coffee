@@ -6,7 +6,7 @@ useSeoMeta({
   description: '了解 Brew & Bean 的故事、理念，以及我們對咖啡的堅持。'
 })
 
-const { getAbout, resolveAssetUrl, findAsset } = useContentful()
+const { getAbout } = useAbout()
 
 const { data: aboutResponse, error, pending } = await useAsyncData(
   'about',

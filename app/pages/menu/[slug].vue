@@ -2,7 +2,7 @@
 const route = useRoute()
 const slug = route.params.slug as string
 
-const { getMenuItemBySlug, resolveAssetUrl, findAsset } = useContentful()
+const { getMenuItemBySlug } = useMenuItems()
 
 const { data: itemResponse, error, pending } = await useAsyncData(
   `menuItem-${slug}`,

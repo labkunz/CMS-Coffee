@@ -4,7 +4,8 @@ useSeoMeta({
   description: '精選豆源、手沖咖啡、甜點，歡迎來到 Brew & Bean 咖啡廳。'
 })
 
-const { getHomePage, getFeaturedItems, resolveAssetUrl, findAsset } = useContentful()
+const { getHomePage } = useHomePage()
+const { getFeaturedItems } = useMenuItems()
 
 // 首頁資料（用完整 response 才能拿到 includes.Asset 解析 heroImage）
 const { data: homeResponse, error: homeError } = await useAsyncData(

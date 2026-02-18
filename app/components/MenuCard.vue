@@ -6,8 +6,6 @@ const props = defineProps<{
   includes?: ContentfulResponse<unknown>['includes']
 }>()
 
-const { resolveAssetUrl, findAsset } = useContentful()
-
 const imageUrl = computed(() => {
   const assetId = props.item.fields.image?.sys?.id
   if (!assetId) return ''

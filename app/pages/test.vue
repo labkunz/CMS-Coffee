@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { getMenuItems, resolveAssetUrl, findAsset } = useContentful()
+const { getMenuItems } = useMenuItems()
 
 const { data, pending, error } = await useAsyncData('test-menu', () =>
   getMenuItems({ limit: '3' })

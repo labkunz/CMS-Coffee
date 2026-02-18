@@ -4,7 +4,7 @@ useSeoMeta({
   description: '探索 Brew & Bean 的完整菜單，包含 Espresso、手沖咖啡、茶飲與甜點。'
 })
 
-const { getMenuItems } = useContentful()
+const { getMenuItems } = useMenuItems()
 
 const { data: menuResponse, error, pending } = await useAsyncData(
   'menuItems',
