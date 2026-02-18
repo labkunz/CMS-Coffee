@@ -4,7 +4,7 @@ import type { Document } from '@contentful/rich-text-types'
 
 export interface ContentfulSys {
   id: string
-  type: string
+  type: 'Entry' | 'Asset' | 'Array' | 'Link'
   createdAt: string
   updatedAt: string
   locale: string
@@ -13,6 +13,12 @@ export interface ContentfulSys {
       id: string
     }
   }
+}
+
+// Contentful Entry 基礎型別（用於 includes.Entry）
+export interface ContentfulEntry {
+  sys: ContentfulSys
+  fields: Record<string, unknown>
 }
 
 // CDA 回傳的 Entry 中，關聯資源（Asset/Entry）是 Link 格式
@@ -93,6 +99,6 @@ export interface ContentfulResponse<T> {
   items: T[]
   includes?: {
     Asset?: ContentfulAsset[]
-    Entry?: unknown[]
+    Entry?: ContentfulEntry[]
   }
 }
