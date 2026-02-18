@@ -32,7 +32,7 @@
 - [x] ✅ 🤖 建立 `app/composables/useContentful.ts`（API 封裝）
 - [x] ✅ 🤖 建立 `app/types/contentful.ts`（TypeScript 型別定義）
 - [x] ✅ 🤖 寫一個測試頁面確認 API 串接成功
-- [x] 🧑 在瀏覽器打開 localhost 確認資料有顯示
+- [x] ✅ 🧑 在瀏覽器打開 localhost 確認資料有顯示
 
 **預估時間**：3-4 小時  
 **驗收標準**：瀏覽器打開 localhost，能看到從 Contentful 拉回來的資料
@@ -53,7 +53,7 @@
 - [x] ✅ 🤖 首頁精選品項區塊：篩選 `featured = true` 的品項，用 Nuxt UI Card 元件呈現
 - [x] ✅ 🤖 品項卡片元件（`app/components/MenuCard.vue`）：圖片、名稱、價格、分類標籤
 - [x] ✅ 🤖 處理圖片：用 `resolveAsset` 解析圖片 URL
-- [ ] 🧑 在瀏覽器確認視覺效果，提供調整意見給 Claude Code
+- [x] ✅ 🧑 在瀏覽器確認視覺效果，提供調整意見給 Claude Code
 
 **預估時間**：4-5 小時  
 **驗收標準**：首頁有 Banner + 3 張精選品項卡片，資料全部來自 Contentful
@@ -71,7 +71,7 @@
 - [x] ✅ 🤖 404 處理：slug 不存在時用 `createError` 拋出錯誤頁面
 - [x] ✅ 🤖 Loading 狀態：用 `pending` 搭配 Nuxt UI 的 Skeleton 元件
 - [x] ✅ 🤖 Error 狀態：API 失敗時的降級顯示
-- [ ] 🧑 手動測試：切換分類、點進詳情頁、輸入不存在的 slug 確認 404
+- [x] ✅ 🧑 手動測試：切換分類、點進詳情頁、輸入不存在的 slug 確認 404
 
 **預估時間**：5-6 小時  
 **驗收標準**：菜單頁能篩選、點進詳情頁能看到完整資訊、錯誤情境有處理
@@ -92,11 +92,11 @@
 
 - [x] ✅ 🤖 確認 `.gitignore` 包含 `.env`
 - [x] ✅ 🤖 撰寫基本 `README.md`
-- [ ] 🧑 推 code 到 GitHub
-- [ ] 🧑 到 Vercel 連結 GitHub repo
-- [ ] 🧑 在 Vercel 設定環境變數（CONTENTFUL_SPACE_ID、CONTENTFUL_ACCESS_TOKEN）
-- [ ] 🧑 點 Deploy
-- [ ] 🧑 測試線上版本所有頁面正常運作
+- [x] ✅ 🧑 推 code 到 GitHub
+- [x] ✅ 🧑 到 Vercel 連結 GitHub repo
+- [x] ✅ 🧑 在 Vercel 設定環境變數（CONTENTFUL_SPACE_ID、CONTENTFUL_ACCESS_TOKEN）
+- [x] ✅ 🧑 點 Deploy
+- [x] ✅ 🧑 測試線上版本所有頁面正常運作
 
 **預估時間**：4-5 小時  
 **驗收標準**：有一個公開的 URL，所有頁面和功能都正常
@@ -107,8 +107,8 @@
 
 **目標**：品質打磨，確保可以放在履歷上
 
-- [ ] 🤖 RWD 基本適配（手機版不要跑版）
-- [ ] 🤖 整體視覺微調（間距、配色一致性）
+- [x] ✅ 🤖 RWD 基本適配（手機版不要跑版）
+- [x] ✅ 🤖 整體視覺微調（間距、配色一致性）
 - [ ] 🤖 README 補充完整：技術選型說明、架構說明、如何執行
 - [ ] 🧑 最後測試：所有連結、圖片、API 都正常
 - [ ] 🤖（如有餘力）補完 TypeScript 型別定義
