@@ -49,7 +49,10 @@ const descriptionHtml = computed(() => {
       v-else-if="error"
       class="text-center py-20"
     >
-      <UIcon name="i-lucide-alert-circle" class="w-10 h-10 mx-auto mb-3 text-red-500" />
+      <UIcon
+        name="i-lucide-alert-circle"
+        class="w-10 h-10 mx-auto mb-3 text-red-500"
+      />
       <p class="text-muted">
         無法載入頁面，請稍後再試。
       </p>
@@ -87,7 +90,10 @@ const descriptionHtml = computed(() => {
           v-if="about.fields.address"
           class="flex items-start gap-3"
         >
-          <UIcon name="i-lucide-map-pin" class="w-5 h-5 mt-0.5 text-primary shrink-0" />
+          <UIcon
+            name="i-lucide-map-pin"
+            class="w-5 h-5 mt-0.5 text-primary shrink-0"
+          />
           <div>
             <p class="font-semibold mb-1">
               地址
@@ -102,7 +108,10 @@ const descriptionHtml = computed(() => {
           v-if="about.fields.openingHours"
           class="flex items-start gap-3"
         >
-          <UIcon name="i-lucide-clock" class="w-5 h-5 mt-0.5 text-primary shrink-0" />
+          <UIcon
+            name="i-lucide-clock"
+            class="w-5 h-5 mt-0.5 text-primary shrink-0"
+          />
           <div>
             <p class="font-semibold mb-1">
               營業時間
@@ -120,7 +129,10 @@ const descriptionHtml = computed(() => {
       v-else
       class="text-center py-20 text-muted"
     >
-      <UIcon name="i-lucide-coffee" class="w-10 h-10 mx-auto mb-3" />
+      <UIcon
+        name="i-lucide-coffee"
+        class="w-10 h-10 mx-auto mb-3"
+      />
       <p>關於我們的資訊尚未建立。</p>
     </div>
   </div>

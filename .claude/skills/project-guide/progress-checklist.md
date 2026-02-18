@@ -25,14 +25,14 @@
 
 ### Nuxt 4 專案建置（🤖 Claude Code）
 
-- [ ] 🧑 在終端機執行：`npx nuxi@latest init coffee-web`（需要你互動選擇選項）
-- [ ] 🤖 安裝 Nuxt UI v4：`npx nuxi@latest module add ui`
-- [ ] 🤖 設定 `nuxt.config.ts`（runtimeConfig、Contentful 環境變數）
-- [ ] 🤖 建立 `.env` 檔案，填入 Space ID 和 CDA token
-- [ ] 🤖 建立 `app/composables/useContentful.ts`（API 封裝）
-- [ ] 🤖 建立 `app/types/contentful.ts`（TypeScript 型別定義）
-- [ ] 🤖 寫一個測試頁面確認 API 串接成功
-- [ ] 🧑 在瀏覽器打開 localhost 確認資料有顯示
+- [x] ✅ 🧑 在終端機執行：`npx nuxi@latest init coffee-web`（需要你互動選擇選項）
+- [x] ✅ 🤖 安裝 Nuxt UI v4：`npx nuxi@latest module add ui`
+- [x] 🤖 設定 `nuxt.config.ts`（runtimeConfig、Contentful 環境變數）
+- [x] 🤖 建立 `.env` 檔案，填入 Space ID 和 CDA token
+- [x] 🤖 建立 `app/composables/useContentful.ts`（API 封裝）
+- [x] 🤖 建立 `app/types/contentful.ts`（TypeScript 型別定義）
+- [x] 🤖 寫一個測試頁面確認 API 串接成功
+- [x] 🧑 在瀏覽器打開 localhost 確認資料有顯示
 
 **預估時間**：3-4 小時  
 **驗收標準**：瀏覽器打開 localhost，能看到從 Contentful 拉回來的資料

@@ -64,7 +64,7 @@ export function useContentful() {
   async function getMenuItemBySlug(slug: string) {
     const data = await fetchContentful<MenuItem>('menuItem', {
       'fields.slug': slug,
-      limit: '1'
+      'limit': '1'
     })
     return data.items[0] ?? null
   }

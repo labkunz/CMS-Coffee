@@ -15,7 +15,7 @@ type Category = 'all' | 'espresso' | 'drip' | 'tea' | 'dessert'
 
 const activeCategory = ref<Category>('all')
 
-const categories: { value: Category; label: string }[] = [
+const categories: { value: Category, label: string }[] = [
   { value: 'all', label: '全部' },
   { value: 'espresso', label: 'Espresso' },
   { value: 'drip', label: '手沖' },
@@ -75,7 +75,10 @@ const filteredItems = computed(() => {
       v-else-if="error"
       class="text-center py-20"
     >
-      <UIcon name="i-lucide-alert-circle" class="w-10 h-10 mx-auto mb-3 text-red-500" />
+      <UIcon
+        name="i-lucide-alert-circle"
+        class="w-10 h-10 mx-auto mb-3 text-red-500"
+      />
       <p class="text-muted mb-4">
         無法載入菜單，請稍後再試。
       </p>
@@ -105,7 +108,10 @@ const filteredItems = computed(() => {
       v-else
       class="text-center py-20 text-muted"
     >
-      <UIcon name="i-lucide-coffee" class="w-10 h-10 mx-auto mb-3" />
+      <UIcon
+        name="i-lucide-coffee"
+        class="w-10 h-10 mx-auto mb-3"
+      />
       <p>此分類目前沒有品項。</p>
     </div>
   </div>

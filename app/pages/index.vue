@@ -136,7 +136,10 @@ const featuredIncludes = computed(() => featuredData.value?.includes)
           v-else-if="featuredError"
           class="text-center py-12 text-muted"
         >
-          <UIcon name="i-lucide-alert-circle" class="w-8 h-8 mx-auto mb-2" />
+          <UIcon
+            name="i-lucide-alert-circle"
+            class="w-8 h-8 mx-auto mb-2"
+          />
           <p>無法載入精選品項，請稍後再試。</p>
         </div>
 

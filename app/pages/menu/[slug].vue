@@ -6,7 +6,7 @@ const { fetchContentful, resolveAssetUrl, findAsset } = useContentful()
 
 const { data: itemResponse, error, pending } = await useAsyncData(
   `menuItem-${slug}`,
-  () => fetchContentful('menuItem', { 'fields.slug': slug, limit: '1' })
+  () => fetchContentful('menuItem', { 'fields.slug': slug, 'limit': '1' })
 )
 
 // slug 不存在時拋出 404
@@ -63,7 +63,10 @@ watchEffect(() => {
       v-else-if="error"
       class="text-center py-20"
     >
-      <UIcon name="i-lucide-alert-circle" class="w-10 h-10 mx-auto mb-3 text-red-500" />
+      <UIcon
+        name="i-lucide-alert-circle"
+        class="w-10 h-10 mx-auto mb-3 text-red-500"
+      />
       <p class="text-muted mb-4">
         載入失敗，請稍後再試。
       </p>
@@ -82,7 +85,10 @@ watchEffect(() => {
         to="/menu"
         class="inline-flex items-center gap-1 text-sm text-muted hover:text-foreground mb-6 transition-colors"
       >
-        <UIcon name="i-lucide-arrow-left" class="w-4 h-4" />
+        <UIcon
+          name="i-lucide-arrow-left"
+          class="w-4 h-4"
+        />
         返回菜單
       </NuxtLink>
 
@@ -99,7 +105,10 @@ watchEffect(() => {
             v-else
             class="w-full h-full flex items-center justify-center"
           >
-            <UIcon name="i-lucide-image" class="w-16 h-16 text-muted" />
+            <UIcon
+              name="i-lucide-image"
+              class="w-16 h-16 text-muted"
+            />
           </div>
         </div>
 
@@ -130,7 +139,10 @@ watchEffect(() => {
             v-if="item.fields.featured"
             class="flex items-center gap-2 text-sm text-primary"
           >
-            <UIcon name="i-lucide-star" class="w-4 h-4 fill-current" />
+            <UIcon
+              name="i-lucide-star"
+              class="w-4 h-4 fill-current"
+            />
             本週精選品項
           </div>
         </div>

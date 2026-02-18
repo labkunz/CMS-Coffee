@@ -55,7 +55,7 @@ export interface MenuItem {
     description: string
     price: number
     category: 'espresso' | 'drip' | 'tea' | 'dessert'
-    image: ContentfulLink  // CDA 回傳 Link，需透過 resolveAsset 取得實際圖片
+    image: ContentfulLink // CDA 回傳 Link，需透過 resolveAsset 取得實際圖片
     featured: boolean
   }
 }
@@ -65,7 +65,7 @@ export interface HomePage {
   fields: {
     title: string
     subtitle: string
-    heroImage: ContentfulLink  // CDA 回傳 Link
+    heroImage: ContentfulLink // CDA 回傳 Link
     heroButtonText?: string
   }
 }
@@ -75,7 +75,7 @@ export interface About {
   fields: {
     title: string
     description: Document // Rich Text
-    coverImage?: ContentfulLink  // CDA 回傳 Link
+    coverImage?: ContentfulLink // CDA 回傳 Link
     address?: string
     openingHours?: string
   }

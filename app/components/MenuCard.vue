@@ -26,7 +26,10 @@ const categoryLabel = computed(() => categoryMap[props.item.fields.category] ?? 
 </script>
 
 <template>
-  <NuxtLink :to="`/menu/${item.fields.slug}`" class="group block">
+  <NuxtLink
+    :to="`/menu/${item.fields.slug}`"
+    class="group block"
+  >
     <UCard
       class="h-full overflow-hidden transition-shadow hover:shadow-lg"
       :ui="{ body: 'p-0' }"
@@ -43,7 +46,10 @@ const categoryLabel = computed(() => categoryMap[props.item.fields.category] ?? 
           v-else
           class="w-full h-full flex items-center justify-center text-muted"
         >
-          <UIcon name="i-lucide-image" class="w-10 h-10" />
+          <UIcon
+            name="i-lucide-image"
+            class="w-10 h-10"
+          />
         </div>
       </div>
 

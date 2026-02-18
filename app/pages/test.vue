@@ -13,12 +13,18 @@ const { data, pending, error } = await useAsyncData('test-menu', () =>
     </h1>
 
     <!-- Loading -->
-    <div v-if="pending" class="text-gray-500">
+    <div
+      v-if="pending"
+      class="text-gray-500"
+    >
       載入中...
     </div>
 
     <!-- Error -->
-    <div v-else-if="error" class="p-4 bg-red-50 border border-red-200 rounded-lg">
+    <div
+      v-else-if="error"
+      class="p-4 bg-red-50 border border-red-200 rounded-lg"
+    >
       <p class="font-semibold text-red-700">
         API 連線失敗
       </p>
