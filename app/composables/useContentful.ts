@@ -11,7 +11,7 @@ export function useContentful() {
 
   const spaceId = config.public.contentfulSpaceId
   const environment = config.public.contentfulEnvironment
-  const accessToken = config.contentfulAccessToken
+  const accessToken = config.public.contentfulAccessToken
 
   const baseUrl = `https://cdn.contentful.com/spaces/${spaceId}/environments/${environment}`
 
