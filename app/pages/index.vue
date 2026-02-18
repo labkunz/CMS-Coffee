@@ -51,7 +51,7 @@ const featuredIncludes = computed(() => featuredData.value?.includes)
           :alt="homePage.fields.title"
           class="w-full h-full object-cover opacity-40"
         >
-        <div class="absolute inset-0 bg-gradient-to-b from-black/10 to-black/40" />
+        <div class="absolute inset-0 bg-linear-to-b from-black/10 to-black/40" />
       </div>
 
       <!-- 文字內容 -->

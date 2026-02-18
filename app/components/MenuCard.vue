@@ -35,7 +35,7 @@ const categoryLabel = computed(() => categoryMap[props.item.fields.category] ?? 
       :ui="{ body: 'p-0' }"
     >
       <!-- 圖片 -->
-      <div class="aspect-[4/3] overflow-hidden bg-muted">
+      <div class="aspect-4/3 overflow-hidden bg-muted">
         <img
           v-if="imageUrl"
           :src="imageUrl"
