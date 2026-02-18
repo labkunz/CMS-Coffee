@@ -67,17 +67,22 @@ pnpm dev
 ```
 app/
 ├── composables/
-│   └── useContentful.ts    # Contentful API 封裝（fetch + 圖片解析）
+│   ├── useContentfulClient.ts  # 基礎 fetch 方法、共用錯誤處理
+│   ├── useMenuItems.ts         # 菜單品項 API（getMenuItems / getFeaturedItems / getMenuItemBySlug）
+│   ├── useHomePage.ts          # 首頁資料 API（getHomePage）
+│   └── useAbout.ts             # 關於我們 API（getAbout）
+├── utils/
+│   └── contentful.ts           # 圖片解析工具函式（findAsset / resolveAssetUrl）
 ├── types/
-│   └── contentful.ts       # Content Type TypeScript 型別定義
+│   └── contentful.ts           # Content Type TypeScript 型別定義
 ├── components/
-│   └── MenuCard.vue        # 品項卡片共用元件
+│   └── MenuCard.vue            # 品項卡片共用元件
 └── pages/
-    ├── index.vue           # 首頁
-    ├── about.vue           # 關於我們
+    ├── index.vue               # 首頁
+    ├── about.vue               # 關於我們
     └── menu/
-        ├── index.vue       # 菜單列表
-        └── [slug].vue      # 單品詳情頁
+        ├── index.vue           # 菜單列表
+        └── [slug].vue          # 單品詳情頁
 ```
 
 ### Contentful Content Types
@@ -86,7 +91,7 @@ app/
 |-------------|---------|
 | `menuItem` | name, slug, description, price, category, image, featured |
 | `homePage` | title, subtitle, heroImage, heroButtonText |
-| `about` | title, description (Rich Text), coverImage, address, openingHours |
+| `about` | title, content (Rich Text), image, address, openingHours |
 
 ---
 
