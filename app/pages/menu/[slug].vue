@@ -95,12 +95,14 @@ watchEffect(() => {
       <div class="grid md:grid-cols-2 gap-10 items-start">
         <!-- 圖片 -->
         <div class="aspect-square overflow-hidden rounded-xl bg-muted">
-          <img
+          <NuxtImg
             v-if="imageUrl"
             :src="imageUrl"
             :alt="item.fields.name"
+            width="800"
+            height="800"
             class="w-full h-full object-cover"
-          >
+          />
           <div
             v-else
             class="w-full h-full flex items-center justify-center"

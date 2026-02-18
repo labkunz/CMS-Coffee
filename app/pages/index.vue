@@ -45,11 +45,13 @@ const featuredIncludes = computed(() => featuredData.value?.includes)
         v-if="heroImageUrl"
         class="absolute inset-0"
       >
-        <img
+        <NuxtImg
           :src="heroImageUrl"
           :alt="homePage.fields.title"
+          width="1920"
+          height="1080"
           class="w-full h-full object-cover opacity-40"
-        >
+        />
         <div class="absolute inset-0 bg-linear-to-b from-black/10 to-black/40" />
       </div>
 

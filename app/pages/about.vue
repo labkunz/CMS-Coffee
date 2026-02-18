@@ -73,11 +73,13 @@ onMounted(() => {
         v-if="coverImageUrl"
         class="aspect-video overflow-hidden rounded-xl mb-10 bg-muted"
       >
-        <img
+        <NuxtImg
           :src="coverImageUrl"
           :alt="about.fields.title"
+          width="1200"
+          height="675"
           class="w-full h-full object-cover"
-        >
+        />
       </div>
 
       <!-- Rich Text 描述 -->

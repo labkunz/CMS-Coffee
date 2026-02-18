@@ -21,6 +21,10 @@ export default defineNuxtConfig({
     '/': { prerender: true }
   },
 
+  image: {
+    domains: ['images.ctfassets.net']
+  },
+
   compatibilityDate: '2025-01-15',
 
   eslint: {
