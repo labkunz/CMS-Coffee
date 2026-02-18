@@ -1,14 +1,12 @@
 <script setup lang="ts">
-import type { MenuItem } from '~/types/contentful'
-
 const route = useRoute()
 const slug = route.params.slug as string
 
-const { fetchContentful, resolveAssetUrl, findAsset } = useContentful()
+const { getMenuItemBySlug, resolveAssetUrl, findAsset } = useContentful()
 
 const { data: itemResponse, error, pending } = await useAsyncData(
   `menuItem-${slug}`,
-  () => fetchContentful<MenuItem>('menuItem', { 'fields.slug': slug, 'limit': '1' })
+  () => getMenuItemBySlug(slug)
 )
 
 // slug 不存在時拋出 404

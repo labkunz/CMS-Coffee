@@ -1,17 +1,15 @@
 <script setup lang="ts">
-import type { HomePage } from '~/types/contentful'
-
 useSeoMeta({
   title: 'Brew & Bean · 首頁',
   description: '精選豆源、手沖咖啡、甜點，歡迎來到 Brew & Bean 咖啡廳。'
 })
 
-const { fetchContentful, getFeaturedItems, resolveAssetUrl, findAsset } = useContentful()
+const { getHomePage, getFeaturedItems, resolveAssetUrl, findAsset } = useContentful()
 
 // 首頁資料（用完整 response 才能拿到 includes.Asset 解析 heroImage）
 const { data: homeResponse, error: homeError } = await useAsyncData(
   'homePage',
-  () => fetchContentful<HomePage>('homePage', { limit: '1' })
+  () => getHomePage()
 )
 
 // 精選品項

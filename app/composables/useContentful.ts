@@ -62,23 +62,20 @@ export function useContentful() {
 
   // 取得單一品項（by slug）
   async function getMenuItemBySlug(slug: string) {
-    const data = await fetchContentful<MenuItem>('menuItem', {
+    return fetchContentful<MenuItem>('menuItem', {
       'fields.slug': slug,
       'limit': '1'
     })
-    return data.items[0] ?? null
   }
 
   // 取得首頁資料
   async function getHomePage() {
-    const data = await fetchContentful<HomePage>('homePage', { limit: '1' })
-    return data.items[0] ?? null
+    return fetchContentful<HomePage>('homePage', { limit: '1' })
   }
 
   // 取得關於我們
   async function getAbout() {
-    const data = await fetchContentful<About>('about', { limit: '1' })
-    return data.items[0] ?? null
+    return fetchContentful<About>('about', { limit: '1' })
   }
 
   return {

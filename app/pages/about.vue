@@ -1,17 +1,16 @@
 <script setup lang="ts">
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import type { About } from '~/types/contentful'
 
 useSeoMeta({
   title: 'Brew & Bean · 關於我們',
   description: '了解 Brew & Bean 的故事、理念，以及我們對咖啡的堅持。'
 })
 
-const { fetchContentful, resolveAssetUrl, findAsset } = useContentful()
+const { getAbout, resolveAssetUrl, findAsset } = useContentful()
 
 const { data: aboutResponse, error, pending } = await useAsyncData(
   'about',
-  () => fetchContentful<About>('about', { limit: '1' })
+  () => getAbout()
 )
 
 const about = computed(() => aboutResponse.value?.items[0] ?? null)
