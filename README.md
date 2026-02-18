@@ -20,7 +20,7 @@
 ## 功能頁面
 
 - **首頁** (`/`)：Hero Banner + 精選品項，資料來自 Contentful `homePage` Content Type
-- **菜單** (`/menu`)：所有品項列表，支援分類篩選（espresso / drip / tea / dessert）
+- **菜單** (`/menu`)：所有品項列表，支援分類篩選（espresso / drip / tea / dessert），切換分類時有淡入淡出動畫效果
 - **單品詳情** (`/menu/[slug]`)：動態路由，slug 不存在自動 404
 - **關於我們** (`/about`)：Rich Text 描述、店面照片、地址、營業時間
 

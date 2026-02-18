@@ -13,7 +13,25 @@ const { data: menuResponse, error, pending } = await useAsyncData(
 
 type Category = 'all' | 'espresso' | 'drip' | 'tea' | 'dessert'
 
+const FADE_MS = 200
+
+// activeCategory：按鈕 UI 立即反應（讓按鈕高亮不延遲）
 const activeCategory = ref<Category>('all')
+// displayedCategory：實際控制顯示哪些卡片（等淡出後才切換）
+const displayedCategory = ref<Category>('all')
+// gridVisible：控制容器的 opacity
+const gridVisible = ref(true)
+
+watch(activeCategory, async (next) => {
+  // 1. 淡出
+  gridVisible.value = false
+  // 2. 等淡出動畫完成
+  await new Promise(resolve => setTimeout(resolve, FADE_MS))
+  // 3. 切換資料（此時畫面是透明的，不會看到跳位）
+  displayedCategory.value = next
+  // 4. 淡入
+  gridVisible.value = true
+})
 
 const categories: { value: Category, label: string }[] = [
   { value: 'all', label: '全部' },
@@ -27,8 +45,8 @@ const allItems = computed(() => menuResponse.value?.items ?? [])
 const includes = computed(() => menuResponse.value?.includes)
 
 const filteredItems = computed(() => {
-  if (activeCategory.value === 'all') return allItems.value
-  return allItems.value.filter(item => item.fields.category === activeCategory.value)
+  if (displayedCategory.value === 'all') return allItems.value
+  return allItems.value.filter(item => item.fields.category === displayedCategory.value)
 })
 </script>
 
@@ -90,29 +108,46 @@ const filteredItems = computed(() => {
       </UButton>
     </div>
 
-    <!-- 品項列表 -->
-    <div
-      v-else-if="filteredItems.length"
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-    >
-      <MenuCard
-        v-for="item in filteredItems"
-        :key="item.sys.id"
-        :item="item"
-        :includes="includes"
-      />
-    </div>
-
-    <!-- 無資料 -->
+    <!-- 品項列表 / 無資料（共用淡入淡出容器） -->
     <div
       v-else
-      class="text-center py-20 text-muted"
+      class="grid-container"
+      :class="{ 'grid-invisible': !gridVisible }"
     >
-      <UIcon
-        name="i-lucide-coffee"
-        class="w-10 h-10 mx-auto mb-3"
-      />
-      <p>此分類目前沒有品項。</p>
+      <!-- 品項列表 -->
+      <div
+        v-if="filteredItems.length"
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+      >
+        <MenuCard
+          v-for="item in filteredItems"
+          :key="item.sys.id"
+          :item="item"
+          :includes="includes"
+        />
+      </div>
+
+      <!-- 無資料 -->
+      <div
+        v-else
+        class="text-center py-20 text-muted"
+      >
+        <UIcon
+          name="i-lucide-coffee"
+          class="w-10 h-10 mx-auto mb-3"
+        />
+        <p>此分類目前沒有品項。</p>
+      </div>
     </div>
   </div>
 </template>
+
+<style scoped>
+.grid-container {
+  transition: opacity 0.2s ease;
+}
+
+.grid-invisible {
+  opacity: 0;
+}
+</style>
