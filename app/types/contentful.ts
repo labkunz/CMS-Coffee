@@ -76,8 +76,8 @@ export interface About {
   sys: ContentfulSys
   fields: {
     title: string
-    description: Document // Rich Text
-    coverImage?: ContentfulLink // CDA 回傳 Link
+    content: Document // Rich Text
+    image?: ContentfulLink // CDA 回傳 Link
     address?: string
     openingHours?: string
   }

@@ -17,15 +17,19 @@ const { data: aboutResponse, error, pending } = await useAsyncData(
 const about = computed(() => aboutResponse.value?.items[0] ?? null)
 
 const coverImageUrl = computed(() => {
-  const assetId = about.value?.fields?.coverImage?.sys?.id
+  const assetId = about.value?.fields?.image?.sys?.id
   if (!assetId) return ''
   const asset = findAsset(assetId, aboutResponse.value?.includes)
   return resolveAssetUrl(asset)
 })
 
 const descriptionHtml = computed(() => {
-  if (!about.value?.fields?.description) return ''
-  return documentToHtmlString(about.value.fields.description)
+  if (!about.value?.fields?.content) return ''
+  return documentToHtmlString(about.value.fields.content)
+})
+
+onMounted(() => {
+  console.log('about: ', about.value)
 })
 </script>
 
