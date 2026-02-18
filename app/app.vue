@@ -38,11 +38,12 @@ const navLinks = [
         </NuxtLink>
       </template>
 
+      <UNavigationMenu :items="navLinks" />
+
       <template #body>
         <UNavigationMenu
           :items="navLinks"
-          orientation="horizontal"
-          class="hidden md:flex"
+          orientation="vertical"
         />
       </template>
 
