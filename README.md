@@ -1,60 +1,107 @@
-# Nuxt Starter Template
+# Brew & Bean — 咖啡廳品牌官網
 
-[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt&labelColor=020420)](https://ui.nuxt.com)
+咖啡廳品牌官網，以 **Nuxt 4** 為框架，串接 **Contentful** Headless CMS 管理內容，並部署於 Vercel。
 
-Use this template to get started with [Nuxt UI](https://ui.nuxt.com) quickly.
+---
 
-- [Live demo](https://starter-template.nuxt.dev/)
-- [Documentation](https://ui.nuxt.com/docs/getting-started/installation/nuxt)
+## 技術選型
 
-<a href="https://starter-template.nuxt.dev/" target="_blank">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png">
-    <img alt="Nuxt Starter Template" src="https://ui.nuxt.com/assets/templates/nuxt/starter-light.png" width="830" height="466">
-  </picture>
-</a>
+| 技術 | 說明 |
+|------|------|
+| [Nuxt 4](https://nuxt.com/) | Vue 全端框架，支援 SSR / SSG |
+| [Nuxt UI v4](https://ui.nuxt.com/) | 基於 Tailwind CSS v4 的 UI 元件庫 |
+| [Contentful CDA](https://www.contentful.com/) | Headless CMS，管理菜單、首頁、關於我們內容 |
+| [TypeScript](https://www.typescriptlang.org/) | 全程型別安全 |
+| [Vercel](https://vercel.com/) | 靜態 + SSR 部署平台 |
+| [pnpm](https://pnpm.io/) | 套件管理工具 |
 
-> The starter template for Vue is on https://github.com/nuxt-ui-templates/starter-vue.
+---
 
-## Quick Start
+## 功能頁面
 
-```bash [Terminal]
-npm create nuxt@latest -- -t github:nuxt-ui-templates/starter
-```
+- **首頁** (`/`)：Hero Banner + 精選品項，資料來自 Contentful `homePage` Content Type
+- **菜單** (`/menu`)：所有品項列表，支援分類篩選（espresso / drip / tea / dessert）
+- **單品詳情** (`/menu/[slug]`)：動態路由，slug 不存在自動 404
+- **關於我們** (`/about`)：Rich Text 描述、店面照片、地址、營業時間
 
-## Deploy your own
+---
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-name=starter&repository-url=https%3A%2F%2Fgithub.com%2Fnuxt-ui-templates%2Fstarter&demo-image=https%3A%2F%2Fui.nuxt.com%2Fassets%2Ftemplates%2Fnuxt%2Fstarter-dark.png&demo-url=https%3A%2F%2Fstarter-template.nuxt.dev%2F&demo-title=Nuxt%20Starter%20Template&demo-description=A%20minimal%20template%20to%20get%20started%20with%20Nuxt%20UI.)
+## 本地執行
 
-## Setup
-
-Make sure to install the dependencies:
+### 1. 安裝依賴
 
 ```bash
 pnpm install
 ```
 
-## Development Server
+### 2. 設定環境變數
 
-Start the development server on `http://localhost:3000`:
+複製範例檔並填入 Contentful 的 Space ID 與 CDA Access Token：
+
+```bash
+cp .env.example .env
+```
+
+`.env` 內容：
+
+```env
+CONTENTFUL_SPACE_ID=your_space_id
+CONTENTFUL_ACCESS_TOKEN=your_cda_access_token
+CONTENTFUL_ENVIRONMENT=master
+```
+
+> 到 Contentful → Settings → API keys 取得這些值。
+
+### 3. 啟動開發伺服器
 
 ```bash
 pnpm dev
 ```
 
-## Production
+開啟 [http://localhost:3000](http://localhost:3000)
 
-Build the application for production:
+---
+
+## 架構說明
+
+```
+app/
+├── composables/
+│   └── useContentful.ts    # Contentful API 封裝（fetch + 圖片解析）
+├── types/
+│   └── contentful.ts       # Content Type TypeScript 型別定義
+├── components/
+│   └── MenuCard.vue        # 品項卡片共用元件
+└── pages/
+    ├── index.vue           # 首頁
+    ├── about.vue           # 關於我們
+    └── menu/
+        ├── index.vue       # 菜單列表
+        └── [slug].vue      # 單品詳情頁
+```
+
+### Contentful Content Types
+
+| Content Type | 主要欄位 |
+|-------------|---------|
+| `menuItem` | name, slug, description, price, category, image, featured |
+| `homePage` | title, subtitle, heroImage, heroButtonText |
+| `about` | title, description (Rich Text), coverImage, address, openingHours |
+
+---
+
+## 部署到 Vercel
+
+1. 推 code 到 GitHub
+2. 在 Vercel 匯入 GitHub repo
+3. 設定環境變數：`CONTENTFUL_SPACE_ID`、`CONTENTFUL_ACCESS_TOKEN`
+4. 點擊 Deploy
+
+---
+
+## 本地 Build & Preview
 
 ```bash
 pnpm build
-```
-
-Locally preview production build:
-
-```bash
 pnpm preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

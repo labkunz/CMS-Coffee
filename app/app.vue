@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -7,46 +7,47 @@ useHead({
     { rel: 'icon', href: '/favicon.ico' }
   ],
   htmlAttrs: {
-    lang: 'en'
+    lang: 'zh-TW'
   }
 })
 
-const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
-
 useSeoMeta({
-  title,
-  description,
-  ogTitle: title,
-  ogDescription: description,
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
-  twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
+  title: 'Brew & Bean · 咖啡廳',
+  description: '精選豆源、手沖咖啡、甜點，歡迎來到 Brew & Bean。',
+  ogTitle: 'Brew & Bean · 咖啡廳',
+  ogDescription: '精選豆源、手沖咖啡、甜點，歡迎來到 Brew & Bean。',
   twitterCard: 'summary_large_image'
 })
+
+const navLinks = [
+  { label: '首頁', to: '/' },
+  { label: '菜單', to: '/menu' },
+  { label: '關於我們', to: '/about' }
+]
 </script>
 
 <template>
   <UApp>
     <UHeader>
       <template #left>
-        <NuxtLink to="/">
-          <AppLogo class="w-auto h-6 shrink-0" />
+        <NuxtLink
+          to="/"
+          class="text-xl font-bold tracking-tight text-primary"
+        >
+          Brew &amp; Bean
         </NuxtLink>
+      </template>
 
-        <TemplateMenu />
+      <template #body>
+        <UNavigationMenu
+          :items="navLinks"
+          orientation="horizontal"
+          class="hidden md:flex"
+        />
       </template>
 
       <template #right>
         <UColorModeButton />
-
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
       </template>
     </UHeader>
 
@@ -54,24 +55,11 @@ useSeoMeta({
       <NuxtPage />
     </UMain>
 
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
-
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+          © {{ new Date().getFullYear() }} Brew &amp; Bean · 用心沖出每一杯
         </p>
-      </template>
-
-      <template #right>
-        <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
       </template>
     </UFooter>
   </UApp>
